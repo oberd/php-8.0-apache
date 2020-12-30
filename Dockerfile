@@ -1,9 +1,10 @@
-FROM php:8.0-rc-apache
+FROM php:8.0-apache
 
 #php setup, install extensions, setup configs
 RUN apt-get update && apt-get install --no-install-recommends -y \
   libzip-dev \
   libxml2-dev \
+  mariadb-client \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN pecl install zip pcov
@@ -25,9 +26,9 @@ COPY php/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini.disabled
 COPY apache/disable-elb-healthcheck-log.conf /etc/apache2/conf-available/
 
 RUN a2enmod rewrite setenvif \
-    && a2enconf disable-elb-healthcheck-log \ 
-    && a2dissite * \
-    && a2disconf other-vhosts-access-log
+  && a2enconf disable-elb-healthcheck-log \ 
+  && a2dissite * \
+  && a2disconf other-vhosts-access-log
 
 #standard sites available
 COPY apache/sites/*.conf /etc/apache2/sites-available/
@@ -38,7 +39,7 @@ COPY --from=composer:2.0.4 /usr/bin/composer /usr/bin/composer
 #adds "dev" stage command to enable xdebug
 COPY commands/enable-xdebug /usr/local/bin/
 RUN chmod +x /usr/local/bin/enable-xdebug \
-    && mkdir -p /usr/local/tasks/
+  && mkdir -p /usr/local/tasks/
 
 #adds common tasks used through Taskfiles
 COPY tasks/ /usr/local/tasks/
