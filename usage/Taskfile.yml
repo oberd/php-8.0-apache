@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 includes:
     laravel: /usr/local/tasks/laravel.yml
@@ -17,5 +17,6 @@ tasks:
         cmds:
             - task: composer:install
             - task: php:xdebug-host
+            - task: laravel:permissions
             - task: laravel:migrate
             - task: apache:start

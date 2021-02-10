@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 tasks:
     migrate:
@@ -13,3 +13,6 @@ tasks:
         preconditions:
             - sh: "test -f artisan"
               msg: "artisan is not present, is this a laravel project?"
+    permissions:
+        cmds:
+            - chown -R www-data storage
