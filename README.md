@@ -1,4 +1,4 @@
-[![Docker](https://img.shields.io/docker/cloud/build/oberd/php-8.0-apaache?label=Docker&style=flat)](https://hub.docker.com/r/oberd/php-8.0-apache/builds)
+[![Docker](https://img.shields.io/docker/cloud/automated/oberd/php-8.0-apache?label=Docker&style=flat)](https://hub.docker.com/r/oberd/php-8.0-apache/builds)
 
 ## PHP 8.0 Apache Base Image
 
