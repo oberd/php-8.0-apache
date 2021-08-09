@@ -1,3 +1,5 @@
+[![Docker](https://img.shields.io/docker/cloud/build/oberd/php-8.0-apaache?label=Docker&style=flat)](https://hub.docker.com/r/oberd/php-8.0-apache/builds)
+
 ## PHP 8.0 Apache Base Image
 
 This base image contains some helper functionality to get a basic PHP project up and running. It utilizes [Task](https://taskfile.dev/) and contains some basic tasks to perform common functionality.
