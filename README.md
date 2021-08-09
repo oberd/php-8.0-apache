@@ -1,6 +1,6 @@
 ## PHP 8.0 Apache Base Image
 
-This base image contains some helper functionality to get a basic PHP project up and running. It utilizes [Task](https://taskfile.dev/) and contains some basic tasks to preform common functionality.
+This base image contains some helper functionality to get a basic PHP project up and running. It utilizes [Task](https://taskfile.dev/) and contains some basic tasks to perform common functionality.
 
 ### Pre-installed PHP Extensions
 The following PHP extensions are installed into this base image by default. You can view the modules by running `docker run oberd/php-8.0-apache php -m`
