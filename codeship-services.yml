@@ -2,3 +2,4 @@ app:
   build:
     image: oberd/php-8.0-apache
     dockerfile: Dockerfile
+  encrypted_dockercfg_path: dockerhub.json.encrypted

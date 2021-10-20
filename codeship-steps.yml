@@ -1,4 +1,5 @@
 - service: app
+  name: test
   command: task -t /usr/local/tasks/tests/Taskfile.yml test
 
 - service: app
@@ -6,4 +7,3 @@
   image_name: oberd/php-8.0-apache
   image_tag: "{{.Timestamp}}"
   registry: https://registry-1.docker.io
-  encrypted_dockercfg_path: dockerhub.json.encrypted
